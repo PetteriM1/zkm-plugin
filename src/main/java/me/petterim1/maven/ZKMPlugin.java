@@ -83,7 +83,7 @@ public class ZKMPlugin extends AbstractMojo {
                 line = reader.readLine();
             }
             writer = new FileWriter(parsedScript);
-            writer.write(builder.toString().replace("${basedir}", basedir).replace("${libs}", libPaths.toString()));
+            writer.write(builder.toString().replace("${basedir}", basedir).replace("${libs}", libPaths.toString()).replace("${pom.version}", project.getVersion()));
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
